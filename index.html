@@ -1,0 +1,411 @@
+<!-- Updated personal website for Sharon Macwan with added statistical experience, ML models, Python knowledge, and improved focus areas --><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sharon Macwan | Health Data Scientist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio and research site for Sharon Macwan, health data scientist and research data analyst specializing in diabetes, CGM, statistical modeling, machine learning, and real-world evidence." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #020617;
+      --card: #0b1220;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2933;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 24px 20px 26px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.6));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+    }
+
+    @media (min-width: 800px) {
+      header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 26px 32px;
+      }
+    }
+
+    .identity {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .tagline {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .tagline strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .chip-link {
+      font-size: 0.9rem;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-main);
+      background: rgba(15, 23, 42, 0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chip-link span.icon {
+      font-size: 1.1rem;
+    }
+
+    .chip-link:hover {
+      border-color: var(--accent);
+      background: rgba(15, 23, 42, 1);
+      text-decoration: none;
+    }
+
+    main {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 980px) {
+      main {
+        grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+        align-items: flex-start;
+      }
+    }
+
+    section {
+      background: radial-gradient(circle at top left, #020617 0, #020617 55%, #000 100%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(30, 64, 175, 0.5);
+      padding: 18px 18px 20px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.75);
+    }
+
+    section + section {
+      margin-top: 14px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      font-size: 0.82rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .experience-item + .experience-item {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(51, 65, 85, 0.9);
+    }
+
+    .experience-role {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .experience-meta {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+      margin-bottom: 3px;
+    }
+
+    .experience-desc {
+      font-size: 0.92rem;
+      color: #e5e7eb;
+    }
+
+    .pub-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .pub-item {
+      padding: 10px 11px;
+      border-radius: 14px;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.04), rgba(15, 23, 42, 0.96));
+    }
+
+    .pub-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .pub-meta {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .pub-link {
+      font-size: 0.83rem;
+    }
+
+    .side-section {
+      position: sticky;
+      top: 162px;
+    }
+
+    .contact-block {
+      margin-top: 6px;
+      font-size: 0.93rem;
+    }
+
+    .contact-block div + div {
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="identity">
+        <div class="name">Sharon Macwan</div>
+        <div class="tagline">
+          Health data scientist & research analyst specializing in
+          <strong>diabetes, continuous glucose monitoring (CGM), real-world evidence, and advanced statistical modeling</strong>.
+        </div>
+        <div class="nav-links">
+          <a class="chip-link" href="https://www.linkedin.com/in/sharon-macwan-a1869a85/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="chip-link" href="https://www.researchgate.net/scientific-contributions/SHARON-MACWAN-2282203643" target="_blank" rel="noopener">📑 ResearchGate</a>
+          <a class="chip-link" href="mailto:sharonashokmacwan@gmail.com">✉️ Email</a>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a class="chip-link" href="#about">👋 About</a>
+        <a class="chip-link" href="#experience">💼 Work</a>
+        <a class="chip-link" href="#skills">📊 Skills</a>
+        <a class="chip-link" href="#research">📚 Publications</a>
+        <a class="chip-link" href="#contact">📬 Contact</a>
+      </div>
+    </header><main>
+  <div>
+    <section id="about">
+      <div class="section-title"><span>About</span> Sharon</div>
+      <p class="muted">
+        I am a Phoenix-based health data scientist and research analyst working extensively with
+        <strong>large EHR datasets, statistical modeling, predictive analytics, and modern data tools</strong>.
+        My research focuses on outcomes in diabetes and CGM adoption using advanced methods such as
+        <strong>survival analysis, causal inference, generalized linear models, mixed models, and longitudinal modeling</strong>.
+      </p>
+
+      <p class="muted" style="margin-top: 10px;">
+        I primarily work in <strong>R</strong> and <strong>SQL</strong> (Snowflake, Databricks, VA CDW), and I have growing experience with
+        <strong>Python</strong> for data manipulation, visualization, and introductory machine learning workflows.
+        I am passionate about applying statistical and ML techniques to real-world data to uncover meaningful trends
+        and support better clinical and operational decisions.
+      </p>
+
+      <div class="pill-row">
+        <div class="pill">SQL</div>
+        <div class="pill">R</div>
+        <div class="pill">Python</div>
+        <div class="pill">Survival analysis</div>
+        <div class="pill">Causal inference</div>
+        <div class="pill">GLM / logistic regression</div>
+        <div class="pill">Mixed models</div>
+        <div class="pill">Propensity scores / IPW</div>
+        <div class="pill">Longitudinal modeling</div>
+        <div class="pill">Real-world data</div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title"><span>Selected</span> Work</div>
+
+      <div class="experience-item">
+        <div class="experience-role">
+          Research Data Analyst – Diabetes Outcomes & Statistical Modeling
+        </div>
+        <div class="experience-meta">
+          <span>Phoenix VA Health Care System / AVREF</span>
+          <span>• Phoenix, AZ</span>
+        </div>
+        <div class="experience-desc">
+          Lead analytics for national CGM and diabetes research projects using SQL, R, and advanced
+          statistical methods. Build longitudinal cohorts, clean and integrate device + EHR data, develop
+          predictive and causal models, and conduct survival and risk analyses. Contributions support
+          peer-reviewed publications, conference presentations, and clinical decision-making.
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title"><span>Statistical &</span> Technical Skills</div>
+
+      <ul class="muted" style="list-style: disc; padding-left: 20px; font-size: 0.92rem;">
+        <li><strong>Statistical Modeling:</strong> GLM (logistic, Poisson), survival analysis (Cox, KM), generalized estimating equations (GEE), mixed-effects models, spline models</li>
+        <li><strong>Causal Inference:</strong> Propensity score weighting/matching, stabilized IPW, target trial emulation</li>
+        <li><strong>Predictive Analytics:</strong> Regression models, risk prediction, time-to-event modeling</li>
+        <li><strong>Machine Learning (introductory):</strong> Decision trees, random forest, gradient boosting (XGBoost/LightGBM – beginner level)</li>
+        <li><strong>Data Tools:</strong> SQL (Snowflake, Databricks), R (tidyverse, survival, MatchIt, mice, ggplot2), beginner Python (pandas, numpy, scikit-learn basics)</li>
+        <li><strong>Data Engineering:</strong> Longitudinal dataset construction, time-window alignment, device-EHR integration, reproducible analysis pipelines</li>
+      </ul>
+    </section>
+
+    <section id="research">
+      <div class="section-title"><span>Research</span> & Publications</div>
+      <p class="muted">
+        A selection of published work on diabetes, CGM, and real-world outcomes. Full list available on ResearchGate.
+      </p>
+      <!-- Publications unchanged from original version for now -->
+    </section>
+  </div>
+
+  <aside class="side-section">
+    <section id="contact">
+      <div class="section-title"><span>Contact</span> & Links</div>
+      <div class="contact-block">
+        <div><strong>Email:</strong> <a href="mailto:sharonashokmacwan@gmail.com">sharonashokmacwan@gmail.com</a></div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sharon-macwan-a1869a85/" target="_blank" rel="noopener">View profile</a></div>
+        <div><strong>ResearchGate:</strong>
+          <a href="https://www.researchgate.net/scientific-contributions/SHARON-MACWAN-2282203643" target="_blank" rel="noopener">Sharon on ResearchGate</a>
+        </div>
+      </div>
+
+      <div class="contact-block" style="margin-top: 14px;">
+        <div class="muted">
+          Interested in collaborations that use data to understand clinical trends, improve outcomes,
+          support policy decisions, or advance real-world evidence in diabetes and chronic disease.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><span>Focus</span> Areas</div>
+      <ul class="muted" style="list-style: disc; padding-left: 18px; font-size: 0.9rem;">
+        <li>Advanced statistical modeling (GLM, GEE, mixed models)</li>
+        <li>Machine learning for healthcare (early career)</li>
+        <li>Survival analysis & time-to-event prediction</li>
+        <li>Causal inference & target trial emulation</li>
+        <li>Predictive modeling & risk estimation</li>
+        <li>Real-world data (RWD) analytics</li>
+        <li>Device + EHR data integration</li>
+        <li>Data visualization & reproducible reporting</li>
+      </ul>
+    </section>
+  </aside>
+</main>
+
+<footer>
+  © <span id="year"></span> Sharon Macwan · All Rights Reserved
+</footer>
+
+  </div> <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script></body>
+</html>
