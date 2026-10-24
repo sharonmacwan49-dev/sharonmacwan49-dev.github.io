@@ -13,4 +13,5 @@ SELECT
     COUNT(*) AS completed_visits
 FROM appointments
 WHERE status = 'Completed'
-GROUP BY clinic;
+GROUP BY clinic
+ORDER BY clinic;
